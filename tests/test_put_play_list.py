@@ -5,7 +5,7 @@ from requests_folder.requests_file import put_play_list, get_play_list, post_pla
 
 
 class TestPutPlayList(unittest.TestCase):
-    @unittest.skip
+
     def test_put_play_list(self):
         random_number = random.randint(1,9999999999999999)
         playlist_id = post_play_list("31blt7yquqmibecnjbknv5uk5rba", f"playlist_test_put{random_number}", False, True, "test_description").json()["id"]

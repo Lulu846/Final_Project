@@ -57,3 +57,26 @@ def post_play_list_id_tracks(playlist_id, trackid, position=""):
     response = requests.post(f'https://api.spotify.com/v1/playlists/{playlist_id}/tracks', json=data, headers=header)
     return response
 
+def post_create_playlist(user_id, name ="", description ="", privacy =""):
+    header = {'Authorization': token}
+    data = {
+        "name": name,
+        "description": description,
+        "public": privacy
+    }
+    response = requests.post(f'https://api.spotify.com/v1/users/{user_id}/playlists', json=data, headers=header)
+    return response
+
+
+def delete_playlist(name, user_id):
+    header = {'Authorization': token}
+    data = {
+        "name": name
+    }
+    response = requests.delete(f'https://api.spotify.com/v1/users/{user_id}/playlists', json=data, headers=header)
+    return response
+
+
+
+
+

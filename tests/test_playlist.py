@@ -5,7 +5,6 @@ from requests_folder.requests_file import get_play_list, put_play_list
 
 class TestArtist(unittest.TestCase):
 
-		@unittest.skip
 		def test_get_play_list(self):
 				response = get_play_list("37i9dQZF1E3585oSSAOUUK")
 				assert response.status_code == 200, f'Error avalaible markets code 200, but got {response.status_code}'
